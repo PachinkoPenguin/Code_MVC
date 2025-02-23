@@ -8,7 +8,8 @@ from dbConnection.VerifyConnection import VerifyConnection
 from model.Objects.Nakama import Nakama
 from model.DAO.Add_Nakama_DAO import NakamaDAO
 
-class AddNakamaController(QtWidgets.QMainWindow):
+class AddNakamaController(QtWidgets.QDialog):
+
 
     def __init__(self):
         super().__init__()

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'User_Add_View.ui'
+# Form implementation generated from reading ui file '.\User_Add_View.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -73,3 +73,13 @@ class Ui_Dialog(object):
         self.le_Crew.setPlaceholderText(_translate("Dialog", "Crew"))
         self.label_6.setText(_translate("Dialog", " System to add new Nakamas "))
         self.label_4.setText(_translate("Dialog", "Welcome to the team :D"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())

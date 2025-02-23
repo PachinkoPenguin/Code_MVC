@@ -1,11 +1,10 @@
 from PyQt5 import QtWidgets
-from controllers.AddNakamaController import AddNakamaController
+from controllers.homeController import HomeController
 import sys
 
 #pyuic5 -x .ui -o .py
 
 #pyrcc5 image.qrc -o images.py
-
 
 
 def print_hi(name):
@@ -18,8 +17,8 @@ if __name__ == '__main__':
     print_hi('PyCharm')
 
     app = QtWidgets.QApplication(sys.argv)
-    firstCintroller = AddNakamaController()
+    firstCintroller = HomeController()
     windowExample = firstCintroller
-    windowExample.setWindowTitle('Add New Nakama :D')
+    windowExample.setWindowTitle('Home Nakama :D')
     windowExample.show()
     sys.exit(app.exec_())
