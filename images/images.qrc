@@ -5,4 +5,5 @@
     <file>ace.jpg</file>
     <file>one_Piece.jpg</file>
   </qresource>
+  <qresource prefix="images2"/>
 </RCC>
