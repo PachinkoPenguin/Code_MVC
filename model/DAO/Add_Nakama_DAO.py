@@ -11,24 +11,24 @@ class NakamaDAO:
 
     def add_nakama(self, nakama):
         if self.nakama_ref is None:
-            print("❌ Cannot connect to Firebase....")
+            print(" Cannot connect to Firebase....")
             return
 
         try:
             if not isinstance(nakama, Nakama):
-                raise ValueError("❌ The object is not an instance of Nakama")
+                raise ValueError(" The object is not an instance of Nakama")
             self.nakama_ref.add(nakama.create_dictionary())  # Add to Firebase
         except Exception as e:
-            print(f"❌ Error adding Nakama: {e}")
+            print(f"Error adding Nakama: {e}")
 
     # Method to get all Nakamas
     def get_nakamas(self):
         if self.nakama_ref is None:
-            print("❌ Cannot connect to Firebase.....")
+            print("Cannot connect to Firebase.....")
             return []
 
         try:
             return [doc.create_dictionary() for doc in self.nakama_ref.stream()]
         except Exception as e:
-            print(f"❌ Error retrieving Nakamas from Firebase: {e}")
+            print(f"Error retrieving Nakamas from Firebase: {e}")
             return []
