@@ -1,8 +1,5 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-from PyQt5.QtGui import QRegExpValidator
-from PyQt5.QtCore import QRegExp
-from dbConnection.VerifyConnection import VerifyConnection
 from controllers.AddNakamaController import AddNakamaController
 from views.Home_View import Ui_Dialog
 
