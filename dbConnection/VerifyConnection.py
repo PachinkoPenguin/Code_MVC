@@ -14,6 +14,6 @@ class VerifyConnection():
 connection = VerifyConnection()
 
 if connection.verify_connection():
-    print("Internet connection successful ✔")
+    print("Internet connection successful")
 else:
     print("No Internet connection")

@@ -10,11 +10,11 @@ class FirebaseConnection:
             base_dir = os.path.dirname(os.path.abspath(__file__))
 
             # Create the path to the JSON file, assuming it is in the same folder as the script
-            json_path = os.path.join(base_dir, "galilendb-firebase-adminsdk-h9xfs-a6c00c4381.json")
+            json_path = os.path.join(base_dir, "test-137ef-firebase-adminsdk-fbsvc-961bf077b0.json")
 
             # Verify that the JSON file exists
             if not os.path.exists(json_path):
-                print(f"❌ Credential file not found in {json_path}")
+                print(f" Credential file not found in {json_path}")
                 raise FileNotFoundError(f"Credential file not found in {json_path}")
 
             # Initialize Firebase only if it has not been initialized before
@@ -29,7 +29,7 @@ class FirebaseConnection:
             self.db = firestore.client()
 
         except Exception as e:
-            print(f"❌ Error connecting to Firebase: {e}")
+            print(f" Error connecting to Firebase: {e}")
             self.db = None
 
 
