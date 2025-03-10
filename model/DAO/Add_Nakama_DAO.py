@@ -1,4 +1,4 @@
-from model.Objects.Nakama import Nakama
+from model.Objects.usuario import Nakama
 from dbConnection.FirebaseConnection import FirebaseConnection
 
 class NakamaDAO:

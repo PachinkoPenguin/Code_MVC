@@ -5,7 +5,7 @@ from PyQt5.QtGui import QRegExpValidator
 from PyQt5.QtCore import QRegExp
 from dbConnection.VerifyConnection import VerifyConnection
 
-from model.Objects.Nakama import Nakama
+from model.Objects.usuario import Nakama
 from model.DAO.Add_Nakama_DAO import NakamaDAO
 
 class AddNakamaController(QtWidgets.QDialog):
