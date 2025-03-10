@@ -10,7 +10,8 @@ class FirebaseConnection:
             base_dir = os.path.dirname(os.path.abspath(__file__))
 
             # Create the path to the JSON file, assuming it is in the same folder as the script
-            json_path = os.path.join(base_dir, "test-137ef-firebase-adminsdk-fbsvc-961bf077b0.json")
+            json_filename = "credentials/firebase_credentials.json"
+            json_path = os.path.join(base_dir,json_filename)
 
             # Verify that the JSON file exists
             if not os.path.exists(json_path):
