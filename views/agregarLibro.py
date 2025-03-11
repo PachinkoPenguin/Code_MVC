@@ -11,45 +11,31 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Dialog(object):
+class Ui_AgregarLibro(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(365, 458)
+        
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(100, 20, 221, 71))
-        self.label.setStyleSheet("font: 75 16pt \"MS Shell Dlg 2\";")
-        self.label.setObjectName("label")
+        self.label.setStyleSheet("font: 75 16pt 'MS Shell Dlg 2';")
+        self.label.setText("Agregar Libro")
+        
         self.leNombre = QtWidgets.QLineEdit(Dialog)
-        self.leNombre.setGeometry(QtCore.QRect(70, 170, 231, 31))
-        self.leNombre.setObjectName("leNombre")
+        self.leNombre.setGeometry(QtCore.QRect(70, 130, 231, 31))
+        self.leNombre.setPlaceholderText("Nombre del libro")
+        
         self.leAutor = QtWidgets.QLineEdit(Dialog)
-        self.leAutor.setGeometry(QtCore.QRect(70, 230, 231, 31))
-        self.leAutor.setObjectName("leAutor")
+        self.leAutor.setGeometry(QtCore.QRect(70, 190, 231, 31))
+        self.leAutor.setPlaceholderText("Autor del libro")
+        
         self.leGenero = QtWidgets.QLineEdit(Dialog)
-        self.leGenero.setGeometry(QtCore.QRect(70, 290, 231, 31))
-        self.leGenero.setObjectName("leGenero")
+        self.leGenero.setGeometry(QtCore.QRect(70, 250, 231, 31))
+        self.leGenero.setPlaceholderText("Género del libro")
+        
         self.btnAgregar = QtWidgets.QPushButton(Dialog)
-        self.btnAgregar.setGeometry(QtCore.QRect(140, 360, 93, 28))
-        self.btnAgregar.setObjectName("btnAgregar")
-
-        self.retranslateUi(Dialog)
+        self.btnAgregar.setGeometry(QtCore.QRect(140, 310, 93, 28))
+        self.btnAgregar.setText("Agregar")
+        
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    def retranslateUi(self, Dialog):
-        _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "Agregar Libro"))
-        self.leNombre.setPlaceholderText(_translate("Dialog", "Inserta el nombre"))
-        self.leAutor.setPlaceholderText(_translate("Dialog", "Inserta el autor"))
-        self.leGenero.setPlaceholderText(_translate("Dialog", "Inserta el genero"))
-        self.btnAgregar.setText(_translate("Dialog", "Agregar"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Dialog = QtWidgets.QDialog()
-    ui = Ui_Dialog()
-    ui.setupUi(Dialog)
-    Dialog.show()
-    sys.exit(app.exec_())

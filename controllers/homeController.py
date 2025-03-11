@@ -1,26 +1,39 @@
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QMessageBox
-from controllers.AddNakamaController import AddNakamaController
-from views.Home_View import Ui_Dialog
+from PyQt5.QtWidgets import QDialog
+from views.Home_View import Ui_HomeView
+from views.agregarLibro import Ui_AgregarLibro
+from views.vistaSolicitarPrestamo import Ui_BuscarLibro
 
 class HomeController(QtWidgets.QMainWindow):
 
     def __init__(self):
         super().__init__()
-        print("I'm adding a new Nakama :D")
-        self.ui = Ui_Dialog()
+        print("Iniciando la Biblioteca Virtual")
+        self.ui = Ui_HomeView()
         self.ui.setupUi(self)
         self.initializeGUI()
 
-    # Initialize elements, for example, setting up button functionality
     def initializeGUI(self):
+        """ Conectar botones a sus funciones """
+        self.ui.btnAgregarLibro.clicked.connect(self.abrirAgregarLibro)
+        self.ui.btnBuscarLibro.clicked.connect(self.abrirBuscarLibro)
+        self.ui.btnRentarLibro.clicked.connect(self.abrirRentarLibro)
 
-        self.ui.btnOpenAddNakama.clicked.connect(self.abrirAddNakama)
+    def abrirAgregarLibro(self):
+        """ Abre la ventana para agregar un libro """
+        ventanaAgregar = QDialog()
+        uiAgregar = Ui_AgregarLibro()
+        uiAgregar.setupUi(ventanaAgregar)
+        ventanaAgregar.exec_()
 
-    def abrirAddNakama(self):
+    def abrirBuscarLibro(self):
+        """ Abre la ventana para buscar un libro """
+        ventanaBuscar = QDialog()
+        uiBuscar = Ui_BuscarLibro()
+        uiBuscar.setupUi(ventanaBuscar)
+        ventanaBuscar.exec_()
 
-        firstController = AddNakamaController()
-        firstController.exec_()
-
-    
+    def abrirRentarLibro(self):
+        """ Esta función puede ser implementada más adelante """
+        print("Función de renta de libros aún no implementada.")
 
