@@ -10,7 +10,6 @@ from model.DAO.Add_Nakama_DAO import NakamaDAO
 
 class AddNakamaController(QtWidgets.QDialog):
 
-
     def __init__(self):
         super().__init__()
         print("I'm adding a new Nakama :D")
