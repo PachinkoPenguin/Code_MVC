@@ -9,74 +9,27 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import images.images
 
-
-class Ui_Dialog(object):
+class Ui_HomeView(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(728, 585)
-        self.label_5 = QtWidgets.QLabel(Dialog)
-        self.label_5.setGeometry(QtCore.QRect(0, 540, 971, 71))
-        self.label_5.setStyleSheet("font: 87 18pt \"Arial Black\";\n"
-"background-color: qlineargradient(spread:pad, x1:0, y1:0.125, x2:0.334, y2:1, stop:0.0895522 rgba(146, 169, 190, 255), stop:1 rgba(255, 255, 255, 255));")
-        self.label_5.setText("")
-        self.label_5.setObjectName("label_5")
-        self.label_6 = QtWidgets.QLabel(Dialog)
-        self.label_6.setGeometry(QtCore.QRect(0, 0, 981, 61))
-        self.label_6.setStyleSheet("font: 87 18pt \"Arial Black\";\n"
-"background-color: qlineargradient(spread:pad, x1:1, y1:0.556818, x2:0, y2:0.42, stop:0 rgba(157, 197, 235, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"color: rgb(109, 112, 116);")
-        self.label_6.setObjectName("label_6")
-        self.label_4 = QtWidgets.QLabel(Dialog)
-        self.label_4.setGeometry(QtCore.QRect(540, 540, 231, 41))
-        self.label_4.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";")
-        self.label_4.setObjectName("label_4")
-        self.label_7 = QtWidgets.QLabel(Dialog)
-        self.label_7.setGeometry(QtCore.QRect(640, 0, 111, 71))
-        self.label_7.setStyleSheet("image: url(:/images1/lufy.png);")
-        self.label_7.setText("")
-        self.label_7.setObjectName("label_7")
-        self.label = QtWidgets.QLabel(Dialog)
-        self.label.setGeometry(QtCore.QRect(-40, 120, 811, 441))
-        self.label.setStyleSheet("image: url(:/images1/home.jpg);")
-        self.label.setText("")
-        self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(Dialog)
-        self.label_2.setGeometry(QtCore.QRect(10, 70, 711, 21))
-        self.label_2.setText("")
-        self.label_2.setObjectName("label_2")
-        self.label_8 = QtWidgets.QLabel(Dialog)
-        self.label_8.setGeometry(QtCore.QRect(0, 60, 971, 71))
-        self.label_8.setStyleSheet("font: 87 18pt \"Arial Black\";\n"
-"background-color: qlineargradient(spread:pad, x1:0, y1:0.125, x2:0.334, y2:1, stop:0.0895522 rgba(146, 169, 190, 255), stop:1 rgba(255, 255, 255, 255));")
-        self.label_8.setText("")
-        self.label_8.setObjectName("label_8")
-        self.btnOpenAddNakama = QtWidgets.QPushButton(Dialog)
-        self.btnOpenAddNakama.setGeometry(QtCore.QRect(30, 80, 111, 41))
-        self.btnOpenAddNakama.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";\n"
-"border-color: rgb(30, 41, 255);")
-        self.btnOpenAddNakama.setDefault(True)
-        self.btnOpenAddNakama.setFlat(False)
-        self.btnOpenAddNakama.setObjectName("btnOpenAddNakama")
 
-        self.retranslateUi(Dialog)
+        self.label_title = QtWidgets.QLabel(Dialog)
+        self.label_title.setGeometry(QtCore.QRect(0, 0, 971, 61))
+        self.label_title.setStyleSheet("font: 87 18pt 'Arial Black'; background-color: lightblue;")
+        self.label_title.setText("Biblioteca Virtual")
+
+        self.btnAgregarLibro = QtWidgets.QPushButton(Dialog)
+        self.btnAgregarLibro.setGeometry(QtCore.QRect(30, 80, 150, 41))
+        self.btnAgregarLibro.setText("Agregar Libro")
+        
+        self.btnBuscarLibro = QtWidgets.QPushButton(Dialog)
+        self.btnBuscarLibro.setGeometry(QtCore.QRect(200, 80, 150, 41))
+        self.btnBuscarLibro.setText("Buscar Libro")
+        
+        self.btnRentarLibro = QtWidgets.QPushButton(Dialog)
+        self.btnRentarLibro.setGeometry(QtCore.QRect(370, 80, 150, 41))
+        self.btnRentarLibro.setText("Rentar Libro")
+
         QtCore.QMetaObject.connectSlotsByName(Dialog)
-
-    def retranslateUi(self, Dialog):
-        _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label_6.setText(_translate("Dialog", " System to add new Nakamas "))
-        self.label_4.setText(_translate("Dialog", "Welcome to the team :D"))
-        self.btnOpenAddNakama.setText(_translate("Dialog", "Add Nakama"))
-
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Dialog = QtWidgets.QDialog()
-    ui = Ui_Dialog()
-    ui.setupUi(Dialog)
-    Dialog.show()
-    sys.exit(app.exec_())
