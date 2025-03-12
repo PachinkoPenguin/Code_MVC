@@ -1,6 +1,6 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-from views.Add_Usuario_View import Ui_Dialog
+from views.agregarUsuario import Ui_AgregarUsuario as Ui_Dialog
 from PyQt5.QtGui import QRegExpValidator
 from PyQt5.QtCore import QRegExp
 from dbConnection.VerifyConnection import VerifyConnection
@@ -19,7 +19,7 @@ class AddUsuarioController(QtWidgets.QDialog):
         self.initializeGUI()
     
     def initializeGUI(self):
-        
+        print("Connecting buttons to functions...")
         self.ui.btnAddUsuario.clicked.connect(self.addUsuario)
         self.ui.le_Nombre.setStyleSheet("QLineEdit { font-family: Arial; font-size: 16px; font-style: italic; }")
         self.ui.le_Email.setStyleSheet("QLineEdit { font-family: Arial; font-size: 16px; font-style: italic; }")
@@ -39,7 +39,7 @@ class AddUsuarioController(QtWidgets.QDialog):
                 self.usuario_dao.add_usuario(new_usuario)
 
                 if self.usuario_dao.usuario_ref is not None:
-                    QMessageBox.information(self, 'Confirmation', "A new User has been registered ✔", QMessageBox.Ok)
+                    QMessageBox.information(self, 'Confirmation', "A new User has been registered ", QMessageBox.Ok)
                 else:
                     QMessageBox.critical(self, "Error",
                                          "Cannot connect to Firebase. Check your Internet connection.",

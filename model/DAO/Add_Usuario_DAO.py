@@ -5,7 +5,7 @@ class UsuarioDAO:
     def __init__(self):
         self.firebase_connection = FirebaseConnection()
         if self.firebase_connection.db is not None:
-            self.usuario_ref = self.firebase_connection.db.collection('usuarios')
+            self.usuario_ref = self.firebase_connection.db.collection("usuarios")  # ✅ Ensure collection name is correct
         else:
             self.usuario_ref = None
 
@@ -13,21 +13,18 @@ class UsuarioDAO:
         if self.usuario_ref is None:
             print(" Cannot connect to Firebase....")
             return
-        
+
         try:
             if not isinstance(usuario, Usuario):
                 raise ValueError(" The object is not an instance of Usuario")
-            self.usuario_ref.add(usuario.create_dictionary())
-        except Exception as e:
-            print(f"Error adding Usuario: {e}")
-        
-    def get_usuarios(self):
-        if self.usuario_ref is None:
-            print("Cannot connect to Firebase.....")
-            return []
 
-        try:
-            return [doc.create_dictionary() for doc in self.usuario_ref.stream()]
+            print(f" Saving Usuario to Firestore: {usuario.create_dictionary()}")  # ✅ Debug Print
+
+            # ✅ Save to Firestore, using email as document ID
+            doc_ref = self.usuario_ref.document(usuario.get_email())  # ✅ Email is unique ID
+            doc_ref.set(usuario.create_dictionary())  # ✅ .set() updates or creates the document
+
+            print(f"✅ User successfully saved: {usuario.get_email()}")
+
         except Exception as e:
-            print(f"Error retrieving Usuarios from Firebase: {e}")
-            return []
+            print(f" Error adding Usuario: {e}")

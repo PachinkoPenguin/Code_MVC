@@ -37,4 +37,6 @@ class Ui_AgregarLibro(object):
         self.btnAgregar.setGeometry(QtCore.QRect(140, 310, 93, 28))
         self.btnAgregar.setText("Agregar")
         
+    
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+

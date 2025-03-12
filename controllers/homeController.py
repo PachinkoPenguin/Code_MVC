@@ -3,6 +3,8 @@ from PyQt5.QtWidgets import QDialog
 from views.Home_View import Ui_HomeView
 from views.agregarLibro import Ui_AgregarLibro
 from views.vistaSolicitarPrestamo import Ui_BuscarLibro
+from views.agregarUsuario import Ui_AgregarUsuario  # Import new view
+from controllers.AddUsuarioController import AddUsuarioController  # Import new controller
 
 from controllers.AddLibroController import AddLibroController
 
@@ -20,6 +22,7 @@ class HomeController(QtWidgets.QMainWindow):
         self.ui.btnAgregarLibro.clicked.connect(self.abrirAgregarLibro)
         self.ui.btnBuscarLibro.clicked.connect(self.abrirBuscarLibro)
         self.ui.btnRentarLibro.clicked.connect(self.abrirRentarLibro)
+        self.ui.btnAgregarUsuario.clicked.connect(self.abrirAgregarUsuario)  # New Button Connection
 
     def abrirAgregarLibro(self):
         addlibroController = AddLibroController()
@@ -35,3 +38,8 @@ class HomeController(QtWidgets.QMainWindow):
     def abrirRentarLibro(self):
         """ Esta función puede ser implementada más adelante """
         print("Función de renta de libros aún no implementada.")
+
+    def abrirAgregarUsuario(self):
+        """ Abre la ventana para agregar un usuario """
+        addUsuarioController = AddUsuarioController()
+        addUsuarioController.exec_()
